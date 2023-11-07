@@ -1,143 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" contents="IE=edge">
-        <meta name="view port" content="with=device-width, initial-scale=1.0">
-        <title>CRASH COURSE</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-     </head>
+        <meta charset="utf-8"/>
+        <title>REGISTRATION FORM</title>
+        <meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="style.css"/>
+        <style>
+            #password-strength {
+            color: white;
+        }
 
-    <body>
-        <section class="header">
-            <nav>
-                <a href="index.html"><img src="images/logo.jpg"></a>
-                <div class="nav-links" id="navLinks">
-                  
-                    <div class="main">
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">COURSE</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                    </ul>
+        .password-input-container {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1 class="form-title">REGISTRATION</h1>
+                <form action="#">
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                          <label for="FULLNAME">FULLNAME</label>
+                          <input type="text"
+                          id="FULLNAME"
+                          name="FULLNAME"
+                          placeholder="ENTER YOUR FULLNAME" required/>
+                          </div>
+
+                          <div class="user-input-box">
+                            <label for="EMAIL">EMAIL</label>
+                            <input type="email"
+                            id="EMAIL"
+                            name="ENTER EMAIL"
+                            placeholder="ENTER EMAIL" required/>
+                            </div>
+
+                            <div class="user-input-box">
+                                <label for="DOB">DOB</label>
+                                <input type="date"
+                                id="DOB"
+                                name="ENTER DOB"
+                                placeholder="ENTER YOUR DATE OF BIRTH" required/>
+                                </div>
+
+                            <div class="user-input-box">
+                                <label for="USERNAME">USERNAME</label>
+                                <input type="text"
+                                id="USERNAME"
+                                name="USERNAME"
+                                placeholder="ENTER YOUR USERNAME" required/>
+                                </div>
+
+                                <div class="user-input-box">
+                                    <label for="PHONE NUMBER">PHONE NUMBER</label>
+                                    <input type="text"
+                                    id="PHONE NUMBER"
+                                    name="PHONE NUMBER"
+                                    placeholder="ENTER YOUR PHONE NUMBER" required/>
+                                    </div>
+
+
+                                    <div class="user-input-box">
+                                        <label for="PASSWORD">PASSWORD</label>
+                                        <div class="password-input-container">
+                                            <input type="password"
+                                                   id="PASSWORD"
+                                                   name="PASSWORD"
+                                                   placeholder="ENTER PASSWORD"
+                                                   onkeyup="checkPasswordStrength(this.value)"
+                                                   required>
+                                            <div class="password-toggle" onclick="togglePasswordVisibility()">&#128065;</div>
+                                        </div>
+                                        <span id="password-strength"></span>
+                                    </div>
+                                    
+
+                                    
+                                    <div class="user-input-box">
+                                        <label for="CONFIRM PASSWORD">CONFIRM PASSWORD</label>
+                                        <input type="password"
+                                               id="CONFIRM_PASSWORD"
+                                               name="CONFIRM_PASSWORD"
+                                               placeholder="CONFIRM PASSWORD"
+                                               onkeyup="checkPasswordMatch()"
+                                               required>
+                                        <span id="password-match"></span>
+                                    </div>
+                                    
+                    
+                    </div>
+                    <div class="gender-title">
+                        <span class="gender-title">GENDER</span>
+                        <div class="gender-category">
+                            <input type="radio" name="GENDER" id="MALE"/>
+                            <label for="male">MALE</label>
+                            <input type="radio" name="GENDER" id="FEMALE"/>
+                            <label for="female">FEMALE</label>
+                            <input type="radio" name="GENDER" id="OTHERS"/>
+                            <label for="others">OTHERS</label>
+                        </div>
+                    
+                        <div>
+                            <form action="C:\Users\Student\Desktop\web internship\success.html" method="post">
+                               
+                            </form>
+                        </div>
+                        <div class="form-submit-btn">
+                            <input type="submit" value="REGISTER"  onclick="redirectToNextPage()"/>
+                        </div>
+    
+                    </form>
+                      
                     </div>
                 </div>
                 
-            </nav>
-            <div class="text-box">
-                <h1>COMPUTER SCIENCE CRASH COURSE</h1>
-                <a href="" class="hero-btn">Visit Us To Know More</a>
-            </div>
-
-
-        </section>
-        
-<!------Course------>
-<section class="course">
-    <h1>courses we offer</h1>
-    <p>These languages highlight different aspects and applications of each programming language, catering to learners with various interests and goals. </p>
-    <div class="row">
-        <div class="course-col">
-            <h3>Python for Data Science and Machine Learning</h3>
-            <p> where you'll embark on an exciting journey into the world of data-driven insights and intelligent machines</p>
-        </div>
-        <div class="course-col">
-            <h3>Advanced C++ Programming</h3>
-            <p>we'll explore advanced concepts that will elevate your programming skills to new heights.</p>
-        </div>
-        <div class="course-col">
-            <h3>Java Mobile Development</h3>
-            <p> where you'll embark on a thrilling journey into the world of mobile app development using the versatile Java programming language</p>
-        </div>
-    </div>
-
-</section>
-
-<!------facilities------->
-<section class="facilities">
-    <h1>OUR FACILITIES</h1>
-      <p>At Computer Science Crash Course, we take pride in providing a comprehensive range of facilities designed to enhance your experience and meet your every requirement. </p>
-      <div class="row">
-        <div class="facilities-col">
-            <img src="images/coding.jpg">
-            <h3>CODING SKILLS</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="facilities-col">
-            <img src="images/attention.jpg">
-            <h3>INDIVIDUAL ATTENTION</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="facilities-col">
-            <img src="images/career.jpg">
-            <h3>CAREER COUNSELLING</h3>
-        </div>
-      </div>
-</section>
-
-
-<!------ testimonials------>
-<section class="testimonials">
-<h1>WHAT OUR ACADEMIC TUTOR SAYS</h1>
-<p>The tutor spends a few hours on a daily, weekly, or monthly basis to transfer their expertise on the topic or skill to the student </p>
-
-<div class="row">
-    <div class="testimonial-col">
-        <img src="images/testi1.jpg">
-        <div>
-            <p>As a faculty, I am positive, energetic, knowledgeable, and industrious faculty. I can also say that I am a high-achieving teacher.</p>
-        <h4>Professor Stela</h4></div>
-</div>
-</div>
-
-<div class="row">
-    <div class="testimonial-col">
-        <img src="images/testi2.jpg">
-        <div>
-            <p>As an educator, I aim to support students on their learning journey. Embracing technology, staying organized, and continually seeking ways to improve my teaching methods are integral components of my commitment to delivering a comprehensive and enriching educational experience.</p>
-        <h4>Professor Edward</h4></div>
-</div>
-</div>
-
-</section>
-
-<!------Call To Action---->
-
-
-<section class="cta">
-    <h1>Join For Online Classes </h1>
-    <a href="" class="hero-btn">JOIN NOW</a>
-</section>
-
-
-<!---------Footer--------->
-
-<!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<section class="footer">
-    <h4>About Us</h4>
-    <p>Join the pillar of success, and ahead of others</p>
+                <script>
+                    function checkPasswordStrength(password) {
+                        var passwordStrength = document.getElementById('password-strength');
+                        if (password.length == 0) {
+                            passwordStrength.innerHTML = '';
+                            return;
+                        }
+            
+                        var strength = '';
+                        if (password.length < 6) {
+                            strength = 'Weak';
+                        } else if (password.length < 10) {
+                            strength = 'Medium';
+                        } else {
+                            strength = 'Strong';
+                        }
+            
+                        passwordStrength.innerHTML = 'Password Strength: ' + strength;
+                    }
+            
+                    function checkPasswordMatch() {
+                        var password = document.getElementById('PASSWORD').value;
+                        var confirmPassword = document.getElementById('CONFIRM_PASSWORD').value;
+                        var passwordMatch = document.getElementById('password-match');
+            
+                        if (password === confirmPassword) {
+                            passwordMatch.innerHTML = 'Password Match';
+                            passwordMatch.style.color = 'green';
+                        } else {
+                            passwordMatch.innerHTML = 'Password Does Not Match';
+                            passwordMatch.style.color = 'red';
+                        }
+                    }
+            
+                    function togglePasswordVisibility() {
+                        var passwordInput = document.getElementById('PASSWORD');
+                        var passwordToggle = document.querySelector('.password-toggle');
+            
+                        if (passwordInput.type === 'password') {
+                            passwordInput.type = 'text';
+                            passwordToggle.innerHTML = '&#128064;'; // Change to an open eye symbol
+                        } else {
+                            passwordInput.type = 'password';
+                            passwordToggle.innerHTML = '&#128065;'; // Change back to a closed eye symbol
+                        }
+                    }
+            
+                    function redirectToNextPage() {
+                        // Your form processing logic goes here
+                        var password = document.getElementById('PASSWORD').value;
+                        var confirmPassword = document.getElementById('CONFIRM_PASSWORD').value;
+            
+                        if (password === confirmPassword) {
+                            // Redirect to the next page
+                            window.location.href = 'success.html';
+                        } else {
+                            // Handle the case where passwords don't match
+                            alert('Passwords do not match. Please make sure they match before submitting the form.');
+                        }
+                    }
+                </script>
+            </body>
+    </html>
     
-
-    <div class="icons">
-
-		
-<a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-twitter"></a>
-<a href="#" class="fa fa-linkedin"></a>
-<a href="#" class="fa fa-instagram"></a>
-<a href="#" class="fa fa-whatsapp"></a>
-
-    </div>
-   
-</section>
