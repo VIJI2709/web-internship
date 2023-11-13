@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>REGISTRATION FORM</title>
+        <meta name="viewport" content="width-device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="style.css"/>
+        <style>
+            #password-strength {
+            color: white;
+        }
+
+        .password-input-container {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1 class="form-title">REGISTRATION</h1>
+                <form action="#">
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                          <label for="FULLNAME">FULLNAME</label>
+                          <input type="text"
+                          id="FULLNAME"
+                          name="FULLNAME"
+                          placeholder="ENTER YOUR FULLNAME" required/>
+                          </div>
+
+                          <div class="user-input-box">
+                            <label for="EMAIL">EMAIL</label>
+                            <input type="email"
+                            id="EMAIL"
+                            name="ENTER EMAIL"
+                            placeholder="ENTER EMAIL" required/>
+                            </div>
+
+                            <div class="user-input-box">
+                                <label for="DOB">DOB</label>
+                                <input type="date"
+                                id="DOB"
+                                name="ENTER DOB"
+                                placeholder="ENTER YOUR DATE OF BIRTH" required/>
+                                </div>
+
+                            <div class="user-input-box">
+                                <label for="USERNAME">USERNAME</label>
+                                <input type="text"
+                                id="USERNAME"
+                                name="USERNAME"
+                                placeholder="ENTER YOUR USERNAME" required/>
+                                </div>
+
+                                <div class="user-input-box">
+                                    <label for="PHONE NUMBER">PHONE NUMBER</label>
+                                    <input type="text"
+                                    id="PHONE NUMBER"
+                                    name="PHONE NUMBER"
+                                    placeholder="ENTER YOUR PHONE NUMBER" required/>
+                                    </div>
+
+
+                                    <div class="user-input-box">
+                                        <label for="PASSWORD">PASSWORD</label>
+                                        <div class="password-input-container">
+                                            <input type="password"
+                                                   id="PASSWORD"
+                                                   name="PASSWORD"
+                                                   placeholder="ENTER PASSWORD"
+                                                   onkeyup="checkPasswordStrength(this.value)"
+                                                   required>
+                                            <div class="password-toggle" onclick="togglePasswordVisibility()">&#128065;</div>
+                                        </div>
+                                        <span id="password-strength"></span>
+                                    </div>
+                                    
+
+                                    
+                                    <div class="user-input-box">
+                                        <label for="CONFIRM PASSWORD">CONFIRM PASSWORD</label>
+                                        <input type="password"
+                                               id="CONFIRM_PASSWORD"
+                                               name="CONFIRM_PASSWORD"
+                                               placeholder="CONFIRM PASSWORD"
+                                               onkeyup="checkPasswordMatch()"
+                                               required>
+                                        <span id="password-match"></span>
+                                    </div>
+                                    
+                    
+                    </div>
+                    <div class="gender-title">
+                        <span class="gender-title">GENDER</span>
+                        <div class="gender-category">
+                            <input type="radio" name="GENDER" id="MALE"/>
+                            <label for="male">MALE</label>
+                            <input type="radio" name="GENDER" id="FEMALE"/>
+                            <label for="female">FEMALE</label>
+                            <input type="radio" name="GENDER" id="OTHERS"/>
+                            <label for="others">OTHERS</label>
+                        </div>
+                    
+                        <div>
+                            <form action="C:\Users\Student\Desktop\web internship\success.html" method="post">
+                               
+                            </form>
+                        </div>
+                        <div class="form-submit-btn">
+                            <input type="submit" value="REGISTER"  onclick="redirectToNextPage()"/>
+                        </div>
+    
+                    </form>
+                      
+                    </div>
+                </div>
+                
+                <script>
+                    function checkPasswordStrength(password) {
+                        var passwordStrength = document.getElementById('password-strength');
+                        if (password.length == 0) {
+                            passwordStrength.innerHTML = '';
+                            return;
+                        }
+            
+                        var strength = '';
+                        if (password.length < 6) {
+                            strength = 'Weak';
+                        } else if (password.length < 10) {
+                            strength = 'Medium';
+                        } else {
+                            strength = 'Strong';
+                        }
+            
+                        passwordStrength.innerHTML = 'Password Strength: ' + strength;
+                    }
+            
+                    function checkPasswordMatch() {
+                        var password = document.getElementById('PASSWORD').value;
+                        var confirmPassword = document.getElementById('CONFIRM_PASSWORD').value;
+                        var passwordMatch = document.getElementById('password-match');
+            
+                        if (password === confirmPassword) {
+                            passwordMatch.innerHTML = 'Password Match';
+                            passwordMatch.style.color = 'green';
+                        } else {
+                            passwordMatch.innerHTML = 'Password Does Not Match';
+                            passwordMatch.style.color = 'red';
+                        }
+                    }
+            
+                    function togglePasswordVisibility() {
+                        var passwordInput = document.getElementById('PASSWORD');
+                        var passwordToggle = document.querySelector('.password-toggle');
+            
+                        if (passwordInput.type === 'password') {
+                            passwordInput.type = 'text';
+                            passwordToggle.innerHTML = '&#128064;'; // Change to an open eye symbol
+                        } else {
+                            passwordInput.type = 'password';
+                            passwordToggle.innerHTML = '&#128065;'; // Change back to a closed eye symbol
+                        }
+                    }
+            
+                    function redirectToNextPage() {
+                        // Your form processing logic goes here
+                        var password = document.getElementById('PASSWORD').value;
+                        var confirmPassword = document.getElementById('CONFIRM_PASSWORD').value;
+            
+                        if (password === confirmPassword) {
+                            // Redirect to the next page
+                            window.location.href = 'success.html';
+                        } else {
+                            // Handle the case where passwords don't match
+                            alert('Passwords do not match. Please make sure they match before submitting the form.');
+                        }
+                    }
+                </script>
+            </body>
+    </html>
+    
